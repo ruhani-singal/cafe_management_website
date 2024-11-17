@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewsters Coffee - Cold Drinks</title>
+    <style></style>
+    <link rel="stylesheet" href="Page 3.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../Logo.png" alt="" height="100px">
+            <!--img src, will add later on-->
+        </div>
+        <!--menu icon-->
+        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
+        <!--Links-->
+        <ul class="navbar">
+            <li><a href="../Home Page/MainPage.html">Home</a></li>
+            <li><a href="../About/About.html">About Us</a></li>
+            <li><a href="../Page 1/Page 1.html">Products</a></li>
+            <li><a href="../Review/Review.html">Customers</a></li>
+            <li><a href="../Login Page/Login.html">Login</a></li>
+            <li><a href="../Sign Up/Sign.html">Sign Up</a></li>
+        </ul>
+        <!--icons-->
+        <div class="header-icon">
+            <div class="search">
+                <input type="text" name="search" id="search-bar" placeholder="Looking for something?" onkeyup="searchProducts()">
+                <i class='bx bx-search' id="search icon"></i>  
+            </div>
+            <a href="../Cart/Cart.html"><i class='bx bx-cart-alt'></i></a>
+        </div>
+        <!--search box-->
+    </header>
+
+    <div class="container">
+        <div class="category-nav">
+            <!-- <button class="category-btn">All Items</button> -->
+            <button class="category-btn"><a href="../Page 1/Page 1.html">All Items</a></button>
+            <button class="category-btn"><a href="../Page 2/Page 2.html">Hot Drinks</a></button>
+            <button class="category-btn"><a href="../Page 3/Page 3.html">Cold Drinks</a></button>
+            <button class="category-btn"><a href="../Page 4/Page 4.html">Pastries</a></button>
+            <button class="category-btn"><a href="../Page 5/Page 5.html">Seasonal</a></button>
+        </div>
+
+    <div class="container">
+    <div class="container">
+        <h2 class="category-title">Cold Drinks</h2>
+        <div class="products-grid">
+            <div class="card" data-id="25" data-title="Iced Caramel Macchiato" data-price="149">
+                <img src="ice 1.webp" alt="Iced Caramel Macchiato" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Caramel Macchiato</h3>
+                    <p class="card-description">Chilled espresso layered with vanilla-flavored syrup, cold milk, and caramel drizzle served over ice.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.149</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="26" data-title="Cold Brew" data-price="199">
+                <img src="brew.jpg" alt="Cold Brew" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Signature Cold Brew</h3>
+                    <p class="card-description">Slow-steeped for 20 hours, our cold brew offers a smooth, rich flavor with naturally sweet undertones.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.199</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="27" data-title="Iced Latte" data-price="119">
+                <img src="prem.jpg" alt="Iced Latte" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Latte</h3>
+                    <p class="card-description">Smooth espresso poured over cold milk and ice for a refreshing coffee experience.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.119</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="28" data-title="Frappuccino" data-price="299">
+                <img src="frap.jpg" alt="Frappuccino" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Coffee Frappuccino</h3>
+                    <p class="card-description">Coffee blended with milk, ice, and your choice of flavoring, topped with whipped cream.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.299</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="29" data-title="Iced Matcha" data-price="189">
+                <img src="match.jpg" alt="Iced Matcha" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Matcha Latte</h3>
+                    <p class="card-description">Premium Japanese matcha green tea shaken with cold milk and served over ice.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.189</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="30" data-title="Iced Mocha" data-price="169">
+                <img src="mooch.jpg" alt="Iced Mocha" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Mocha</h3>
+                    <p class="card-description">Chilled espresso with chocolate sauce and cold milk over ice, topped with whipped cream.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.169</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="31" data-title="Passion Fruit Tea" data-price="99">
+                <img src="orange.avif" alt="Passion Fruit Tea" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Passion Fruit Tea</h3>
+                    <p class="card-description">Refreshing blend of passion fruit and hibiscus tea, lightly sweetened and served over ice.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.99</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="32" data-title="Mango Smoothie" data-price="129">
+                <img src="mango.webp" alt="Mango Smoothie" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Mango Smoothie</h3>
+                    <p class="card-description">Fresh mango blended with yogurt and ice for a tropical refreshment.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.129</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="33" data-title="Iced Chai" data-price="179">
+                <img src="chai 3.webp" alt="Iced Chai" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Chai Latte</h3>
+                    <p class="card-description">Spiced black tea concentrate with cold milk and ice for a refreshing twist on a classic.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.179</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="34" data-title="Lemonade" data-price="99">
+                <img src="mint.jpg" alt="Lemonade" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Fresh Mint Lemonade</h3>
+                    <p class="card-description">House-made lemonade infused with fresh mint leaves and served over crushed ice.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.99</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="35" data-title="Nitro Cold Brew" data-price="199">
+                <img src="nitro.jpg" alt="Nitro Cold Brew" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Nitro Cold Brew</h3>
+                    <p class="card-description">Our signature cold brew infused with nitrogen for a super smooth, creamy texture.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.199</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="36" data-title="Berry Iced Tea" data-price="149">
+                <img src="red.webp" alt="Berry Iced Tea" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Mixed Berry Iced Tea</h3>
+                    <p class="card-description">Black tea infused with mixed berries, lightly sweetened and served over ice.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.149</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../Page 1/index.js"></script>
+</html>

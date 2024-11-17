@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart</title>
+    <!-- <style>
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-table th, .cart-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .cart-table th {
+            background-color: #f4f4f4;
+        }
+    </style> -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../Logo.png" alt="" height="100px">
+            <!--img src, will add later on-->
+        </div>
+        <!--menu icon-->
+        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
+        <!--Links-->
+        <ul class="navbar">
+            <li><a href="../Home Page/MainPage.html">Home</a></li>
+            <li><a href="../About/About.html">About Us</a></li>
+            <li><a href="../Page 1/Page 1.html">Products</a></li>
+            <li><a href="#customers">Customers</a></li>
+            <li><a href="../Login Page/Login.html">Login</a></li>
+            <li><a href="../Sign Up/Sign.html">Sign Up</a></li>
+        </ul>
+        <!--icons-->
+        <div class="header-icon">
+            <div class="search">
+                <input type="text" name="search" id="" placeholder="Search here..">
+                <i class='bx bx-search' id="search icon"></i>  
+            </div>
+            <a href="../Cart/Cart.html"><i class='bx bx-cart-alt'></i></a>
+        </div>
+        <!--search box-->
+    </header>
+    <h1>Shopping Cart</h1>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price (Rs.)</th>
+                <th>Quantity</th>
+                <th>Total (Rs.)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+    <p>Total: Rs. <span id="cart-total">0</span></p>
+    <button onclick="clearCart()">Clear Cart</button>
+
+    <script>
+        // Function to load cart items from localStorage and display them
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItemsContainer = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+            let total = 0;
+
+            cartItemsContainer.innerHTML = ""; // Clear existing items
+
+            cart.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.title}</td>
+                    <td>${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.price * item.quantity}</td>
+                    <td><button onclick="removeFromCart('${item.id}')">Remove</button></td>
+                `;
+                cartItemsContainer.appendChild(row);
+
+                total += item.price * item.quantity;
+            });
+
+            cartTotal.textContent = total;
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart = cart.filter(item => item.id !== productId);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart(); // Reload cart
+        }
+
+        // Function to clear the entire cart
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart(); // Reload cart
+        }
+
+        // Initialize cart display
+        loadCart();
+    </script>
+</body>
+</html>

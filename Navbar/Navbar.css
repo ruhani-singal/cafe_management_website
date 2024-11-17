@@ -1,0 +1,88 @@
+:root {
+    --primary: #7d141d;
+    --secondary: #a41b27;
+    --accent: #db9395;
+    --light-accent: #f4e7e7;
+    --text: #2C1810;
+    --background: #faf6f6;
+}
+
+.header {
+    display: flex;
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(125, 20, 29, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+}
+
+.right{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 20px;
+    padding: 0; /* Removes default list padding */
+    margin: 0; /* Removes default list margin */
+    align-items: center; /* Aligns items vertically */
+}
+
+.navbar li {
+    list-style: none; /* Ensures no bullets appear */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: var(--main-color); /* Changes color on hover */
+}
+
+.header-icon {
+    margin-left: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Adds spacing between icons */
+    align-items: center; /* Aligns icons vertically */
+}
+
+.header-icon .bx {
+    color: var(--text-color); /* Ensures consistent icon color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.header-icon .bx:hover {
+    color: var(--main-color); /* Changes icon color on hover */
+}
+
+.logo{
+    flex: 1;
+}

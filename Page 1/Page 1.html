@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewsters Coffee - Artisan Brews & Treats</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--box icons-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+       <!--navbar-->
+       <header>
+        <div class="logo">
+            <img src="../Logo.png" alt="" height="100px">
+            <!--img src, will add later on-->
+        </div>
+        <!--menu icon-->
+        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
+        <!--Links-->
+        <ul class="navbar">
+            <li><a href="../Home Page/MainPage.html">Home</a></li>
+            <li><a href="../About/About.html">About Us</a></li>
+            <li><a href="../Page 1/Page 1.html">Products</a></li>
+            <li><a href="../Review/Review.html">Customers</a></li>
+            <li><a href="../Login Page/Login.html">Login</a></li>
+            <li><a href="../Sign Up/Sign.html">Sign Up</a></li>
+        </ul>
+        <!--icons-->
+        <div class="header-icon">
+            <div class="search">
+                <input type="text" name="search" id="search-bar" placeholder="Looking for something?" onkeyup="searchProducts()">
+                <i class='bx bx-search' id="search icon"></i>  
+            </div>
+            <a href="../Cart/Cart.html"><i class='bx bx-cart-alt'></i></a>
+        </div>
+        <!--search box-->
+    </header>
+    
+    <div class="container">
+        <nav class="category-nav">
+            <button class="category-btn active">All Items</button>
+            <button class="category-btn"><a href="../Page 2/Page 2.html">Hot Drinks</a></button>
+            <button class="category-btn"><a href="../Page 3/Page 3.html">Cold Drinks</a></button>
+            <button class="category-btn"><a href="../Page 4/Page 4.html">Pastries</a></button>
+            <button class="category-btn"><a href="../Page 5/Page 5.html">Seasonal</a></button>
+        </nav>
+
+        <h2 class="category-title">Featured Drinks</h2>
+
+        <div class="products-grid">
+            <div class="card" data-id="1" data-title="Caramel Macchiato" data-price="99">
+                <img src="Caramel.jpg" alt="Caramel Macchiato" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Caramel Macchiato</h3>
+                    <p class="card-description">Smooth espresso layered with vanilla-flavored syrup, milk and caramel drizzle for an oh-so-sweet finish.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.99</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="2" data-title="Mocha Frappuccino" data-price="149">
+                <img src="frappuccino.avif" alt="Mocha Frappuccino" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Mocha Frappuccino</h3>
+                    <p class="card-description">Coffee meets milk and ice, blended with rich mocha sauce and topped with whipped cream.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.149</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="3" data-title="Classic Cold Brew" data-price="99">
+                <img src="iced.jpg" alt="Classic Cold Brew" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Classic Cold Brew</h3>
+                    <p class="card-description">Slow-steeped, small-batch cold brew coffee with a smooth, rich flavor profile.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.99</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="4" data-title="Vanilla Latte" data-price="199">
+                <img src="vanilla.avif" alt="Vanilla Latte" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Vanilla Latte</h3>
+                    <p class="card-description">Rich espresso balanced with vanilla-flavored syrup and steamed milk, topped with a light layer of foam.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.199</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="5" data-title="Cinnamon Roll" data-price="49">
+                <img src="Roll.webp" alt="Cinnamon Roll" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cinnamon Roll</h3>
+                    <p class="card-description">Freshly baked, warm cinnamon roll topped with cream cheese frosting.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.49</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="6" data-title="Pumpkin Spice Latt" data-price="199">
+                <img src="Pumpkin.jpg" alt="Pumpkin Spice Latte" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Pumpkin Spice Latte</h3>
+                    <p class="card-description">Signature espresso blend with pumpkin spice sauce, steamed milk, and topped with whipped cream.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.199</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="7" data-title="Matcha Green Tea Latte" data-price="249">
+                <img src="green1.avif" alt="Matcha Green Tea Latte" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Matcha Green Tea Latte</h3>
+                    <p class="card-description">Premium Japanese matcha green tea powder whisked with steamed milk for a peaceful experience.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.249</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="8" data-title="Chocolate Croissant" data-price="79">
+                <img src="chocolate.jpg" alt="Chocolate Croissant" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Croissant</h3>
+                    <p class="card-description">Buttery, flaky croissant filled with rich dark chocolate, baked fresh daily.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.79</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="9" data-title="Classic Affogato" data-price="169">
+                <img src="classic.webp" alt="Affogato" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Classic Affogato</h3>
+                    <p class="card-description">Hot espresso poured over creamy vanilla gelato, creating a perfect hot-and-cold dessert experience.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.169</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="10" data-title="Raspberry Cheesecake" data-price="209">
+                <img src="rasberry.avif" alt="Raspberry Cheesecake" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Raspberry Cheesecake</h3>
+                    <p class="card-description">Creamy New York style cheesecake topped with fresh raspberry compote.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.209</span>
+                        <button class="order-btn" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="11" data-title="Iced Chai Latte" data-price="119">
+                <img src="chai1.avif" alt="Iced Chai Latte" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Iced Chai Latte</h3>
+                    <p class="card-description">Spiced black tea blend with cold milk and ice, perfect for warm days.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.119</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="12" data-title="Blueberry Muffin" data-price="89">
+                <img src="blue.jpg" alt="Blueberry Muffin" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Blueberry Muffin</h3>
+                    <p class="card-description">Moist muffin packed with fresh blueberries and topped with crystal sugar.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.89</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Record Management</title>
+    <link rel="stylesheet" href="Customer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Record Management</h1>
+        <form id="customerForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" required>
+            
+            <button type="submit">Add Customer</button>
+        </form>
+        
+        <h2>Customer List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="customerList">
+                <!-- Customers will be listed here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="../Customers/Java.js"></script>
+</body>
+</html>

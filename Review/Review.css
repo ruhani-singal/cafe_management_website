@@ -1,0 +1,274 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh;
+    margin: 0;
+  } */
+  
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 30px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
+  .review-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .reviewer-name {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .review-date {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+  }
+  
+  .review-text {
+    font-size: 1em;
+    margin: 15px 0;
+    line-height: 1.6;
+  }
+  
+  .review-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ff5757;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .like-btn:hover {
+    color: #ff3e3e;
+  }
+  
+  .like-icon {
+    font-size: 1.2em;
+  }
+  header{
+    position:sticky;
+    width:100%;
+    top:0;
+    right:0;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 18px 100px; 
+    transition: 0.5s linear;
+    background-color: var(--background);
+    font-family: "Poppins",'sans-serrif';
+    height:100px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color:#f0f0f0;
+  }
+  .logo img{
+    max-width:none;
+  }
+  .navbar{
+    display: flex;
+  }
+  .navbar a{
+    /* padding:8px 17px; */
+    /* gap: 10px; */
+    color: var(--text-color);
+    font-size: 18px;
+    text-transform: uppercase;
+    /* font-weight:800; */
+    /* font-style: bold; */
+    text-decoration: none;
+  }
+  
+  /* .navbar a:hover{
+    background-color:#7d141d;
+    border-radius: 0.2rem;
+    transition: 0.2s all linear;
+  } */
+  
+  .navbar li{
+    list-style: none;
+    gap: 10px;
+  }
+  
+  .header-icon {
+    margin-left: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Adds spacing between icons */
+    align-items: center; /* Aligns icons vertically */
+  }
+  
+  .header-icon .bx {
+    color: var(--text-color); /* Ensures consistent icon color */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .header-icon .bx:hover {
+    color: var(--main-color); /* Changes icon color on hover */
+  }
+  
+  .search-box{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--text-color);
+    width: 100%;
+  }
+  .search-box input{
+    padding: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: var(--main-color);
+  }
+  .search-box input::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .navbar{
+    display: flex;
+  }
+  .navbar a {
+    /* color: white; */
+    padding: 10px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    position: relative; /* Required for the pseudo-element */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px; /* Adjust to place underline just below text */
+    width: 0;
+    height: 2px; /* Thickness of underline */
+    background-color: var(--primary); /* Color of underline */
+    transition: width 0.3s ease; /* Animation effect for underline */
+  }
+  
+  a:hover {
+    color: var(--primary); /* Change link color on hover */
+  }
+  
+  a:hover::after {
+    width: 100%; /* Expands underline on hover */
+  }
+  
+  .search{
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px;
+  }
+  
+  .search:hover{
+    border-color: #7d141d;
+    border: 2px solid;
+  }
+  
+  .search input{
+    background-color: transparent;
+    border: none;
+    /* border-radius: 20px; */
+    height: 30px;
+    /* padding: 10px; */
+  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(125, 20, 29, 0.2);
+    border-radius: 0 0 25px 25px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.star-rating {
+  display: inline-flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.star {
+  font-size: 24px;
+  color: #ccc; /* Default star color */
+  transition: color 0.3s ease;
+}
+
+.star.active,
+.star:hover,
+.star:hover ~ .star {
+  color: #ffcc00; /* Highlighted star color */
+}

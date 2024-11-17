@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewsters Coffee - Pastries</title>
+    <style></style>
+    <link rel="stylesheet" href="Page 4.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../Logo.png" alt="" height="100px">
+            <!--img src, will add later on-->
+        </div>
+        <!--menu icon-->
+        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
+        <!--Links-->
+        <ul class="navbar">
+            <li><a href="../Home Page/MainPage.html">Home</a></li>
+            <li><a href="../About/About.html">About Us</a></li>
+            <li><a href="../Page 1/Page 1.html">Products</a></li>
+            <li><a href="../Review/Review.html">Customers</a></li>
+            <li><a href="../Login Page/Login.html">Login</a></li>
+            <li><a href="../Sign Up/Sign.html">Sign Up</a></li>
+        </ul>
+        <!--icons-->
+        <div class="header-icon">
+            <div class="search">
+                <input type="text" name="search" id="search-bar" placeholder="Looking for something?" onkeyup="searchProducts()">
+                <i class='bx bx-search' id="search icon"></i>  
+            </div>
+            <a href="../Cart/Cart.html"><i class='bx bx-cart-alt'></i></a>
+        </div>
+        <!--search box-->
+    </header>
+    <div class="container">
+        <div class="category-nav">
+            <!-- <button class="category-btn">All Items</button> -->
+            <button class="category-btn"><a href="../Page 1/Page 1.html">All Items</a></button>
+            <button class="category-btn"><a href="../Page 2/Page 2.html">Hot Drinks</a></button>
+            <button class="category-btn"><a href="../Page 3/Page 3.html">Cold Drinks</a></button>
+            <button class="category-btn"><a href="../Page 4/Page 4.html">Pastries</a></button>
+            <button class="category-btn"><a href="../Page 5/Page 5.html">Seasonal</a></button>
+        </div>
+
+
+    <div class="container">
+        <h2 class="category-title">Pastries</h2>
+        <div class="products-grid">
+            <div class="card" data-id="37" data-title="Classic Croissant" data-price="219">
+                <img src="french.jpg!w700wp" alt="Classic Croissant" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Classic Croissant</h3>
+                    <p class="card-description">Flaky, buttery layers of hand-crafted perfection. Baked fresh daily for that authentic French bakery experience.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.219</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="38" data-title="Chocolate Danish" data-price="149">
+                <img src="danish.webp" alt="Chocolate Danish" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Danish</h3>
+                    <p class="card-description">Flaky pastry filled with rich chocolate and drizzled with a vanilla glaze for the perfect sweet treat.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.149</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="39" data-title="Blueberry Muffin" data-price="199">
+                <img src="berry.webp" alt="Blueberry Muffin" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Blueberry Muffin</h3>
+                    <p class="card-description">Moist, tender muffin packed with fresh blueberries and topped with a crispy streusel crumble.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.199</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="40" data-title="Cinnamon Roll" data-price="179">
+                <img src="roll.jpg" alt="Cinnamon Roll" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cinnamon Roll</h3>
+                    <p class="card-description">Soft, swirled pastry loaded with cinnamon and topped with cream cheese frosting.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.179</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="41" data-title="Almond Biscotti" data-price="159">
+                <img src="biscuit.jpg" alt="Almond Biscotti" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Almond Biscotti</h3>
+                    <p class="card-description">Twice-baked Italian cookie with roasted almonds, perfect for dipping in your favorite coffee.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.159</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="42" data-title="Raspberry Scone" data-price="299">
+                <img src="pink.jpeg" alt="Raspberry Scone" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Raspberry Scone</h3>
+                    <p class="card-description">Buttery scone filled with fresh raspberries and finished with a sweet vanilla glaze.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.299</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="43" data-title="Apple Turnover" data-price="245">
+                <img src="puff 1.webp" alt="Apple Turnover" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Apple Turnover</h3>
+                    <p class="card-description">Flaky puff pastry filled with cinnamon-spiced apples and drizzled with caramel sauce.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.245</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="44" data-title="Chocolate Chip Cookie" data-price="99">
+                <img src="cokie.jpg" alt="Chocolate Chip Cookie" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Chocolate Chip Cookie</h3>
+                    <p class="card-description">Classic cookie loaded with premium chocolate chips, baked to golden perfection.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.99</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="45" data-title="Lemon Pound Cake" data-price="119">
+                <img src="bread.jpg" alt="Lemon Pound Cake" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Lemon Pound Cake</h3>
+                    <p class="card-description">Rich, moist pound cake infused with lemon zest and topped with citrus glaze.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.119</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="46" data-title="Cheese Danish" data-price="139">
+                <img src="chese.webp" alt="Cheese Danish" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Cheese Danish</h3>
+                    <p class="card-description">Flaky pastry filled with sweet cream cheese and topped with a vanilla drizzle.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.139</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="47" data-title="Banana Nut Muffin" data-price="169">
+                <img src="muff.jpeg" alt="Banana Nut Muffin" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Banana Nut Muffin</h3>
+                    <p class="card-description">Moist banana muffin loaded with walnuts and topped with a crunchy streusel.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.169</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="48" data-title="Pain au Chocolat" data-price="239">
+                <img src="chitkara.jpg" alt="Pain au Chocolat" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">Pain au Chocolat</h3>
+                    <p class="card-description">Buttery croissant dough wrapped around premium dark chocolate batons.</p>
+                    <div class="card-footer">
+                        <span class="price">Rs.239</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../Page 1/index.js"></script>
+</html>
