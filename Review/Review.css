@@ -7,7 +7,12 @@
     /* height: 100vh;
     margin: 0;
   } */
-  
+  :root {
+    --primary: #7d141d;
+  }
+.header{
+  background-color: white !important;
+}
 .container{
   display: flex;
   justify-content: center;

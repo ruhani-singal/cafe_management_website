@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch - Coffee Shop</title>
+    <link rel="stylesheet" href="merch.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <!--navbar-->
+    <header>
+        <div class="logo">
+            <img src="../Logo.png" alt="Logo" height="100px">
+        </div>
+        <ul class="navbar">
+            <li><a href="projectwork.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="merchandise.html">Merch</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="customers.html">Customers</a></li>
+            <li><a href="loginpage.html">Login</a></li>
+        </ul>
+        <div class="header-icon">
+            <div class="search">
+                <input type="text" name="search" placeholder="Search here...">
+                <i class='bx bx-search'></i>
+            </div>
+            <a href="../Cart/Cart.html">
+                <i class='bx bx-cart-alt'></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="category-title">MERCH</h1>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="container">
+        <h2 class="category-title">Our Products</h2>
+        <div class="products-grid">
+            <div class="card" data-id="1" data-title="Gift Card" data-price="5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="2" data-title="Candle" data-price="28.95">
+                <img src="/api/placeholder/400/400" alt="Candle" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">AUTUMN MOON LATTE CANDLE</h3>
+                    <p class="card-description">EXCLUSIVELY FOR SUMMER MOON BY WILD SUSAN</p>
+                    <div class="card-footer">
+                        <span class="price">$28.95</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="3" data-title="Mug" data-price="24.95">
+                <img src="/api/placeholder/400/400" alt="Mug" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">FOUR SEASONS MUG - WINTER</h3>
+                    <p class="card-description">Perfect for a hot coffee!</p>
+                    <div class="card-footer">
+                        <span class="price">$24.95</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-id="1" data-title="Gift Card" data-price="$5.00">
+                <img src="/api/placeholder/400/400" alt="Gift Card" class="card-image">
+                <div class="card-content">
+                    <h3 class="card-title">GIFT CARD</h3>
+                    <p class="card-description">Accepted at all locations (not online).</p>
+                    <div class="card-footer">
+                        <span class="price">$5.00</span>
+                        <button class="order-btn" onclick="addToCart(this)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../Page 1/index.js"></script>
+</html>

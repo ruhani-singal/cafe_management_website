@@ -5,6 +5,9 @@
     --light-accent: #f4e7e7;
     --text: #2C1810;
     --background: #faf6f6;
+    }
+.search input:focus{
+      outline: none;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300&display=swap');
 * {
@@ -102,7 +105,84 @@ header{
   font-size: 1rem;
   font-weight: 500;
 }
-
+footer{
+  background-color:rgba(76, 49, 40, 0.1);
+  padding:80px 20px;
+  color:#b0967c;
+  position:relative;
+  overflow-x:hidden;
+  height:400px;
+  text-align: left;
+}
+.footer-container{
+  display:flex;
+  justify-content:center;
+  max-width:90%;
+  margin:0 auto;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.footer-container .footer-section img{
+  background-color:#b0967c ;
+}
+.input-info{
+  align-content: center;
+  margin-top: 15px;
+  padding:10px 20px 10px 20px;
+  margin-left:0;
+  margin-right:0;
+  width:100%;
+  text-align: center;
+}
+.input-info input{
+  text-align: center;
+  font-size: 16px;
+  border-radius:16px;
+  width:400px;
+  padding:10px;
+  color:#000000;
+  background-color:whitesmoke;
+}
+.footer-section{
+  flex: 1;
+  padding:20px;
+  width:100%;
+  text-align:center;
+}
+.newsletter-section{
+  background: #493932;
+}
+.newsletter-div h1{
+  font-size:40px;
+  color:#000000;
+  text-align: center;
+}
+.newsletter-div p{
+  font-size:20px;
+  text-align:center;
+  color:#000000;
+}
+.footer-section h2{
+  font-family:"kefa",serif;
+font-size: 30px;
+margin-bottom:15px;
+}
+.footer-section h2 a{
+  text-decoration:none;
+  color:  #4c3128;
+transition: color 0.3s ease;
+}
+.footer-section h2 a:hover{
+  color:black;
+}
+.footer-section ul{
+  list-style-type:none;
+  padding:0;
+}
+.footer-section ul li{
+  margin-bottom:10px;
+  font-size:16px;
+}
 .navbar{
   display: flex;
 }

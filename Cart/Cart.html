@@ -4,83 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Shopping Cart</title>
-    <!-- <style>
-        .cart-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .cart-table th, .cart-table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-        .cart-table th {
-            background-color: #f4f4f4;
-        }
-    </style> -->
+    <title>Checkout</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="../Logo.png" alt="" height="100px">
-            <!--img src, will add later on-->
+            <img src="../Documents/Final logo.png" alt="" height="100px">
         </div>
-        <!--menu icon-->
-        <!-- <i class='bx bx-menu' id="menu-icon"></i> -->
-        <!--Links-->
         <ul class="navbar">
             <li><a href="../Home Page/MainPage.html">Home</a></li>
             <li><a href="../About/About.html">About Us</a></li>
-            <li><a href="../Page 1/Page 1.html">Products</a></li>
+            <li><a href="../Merchandise/merchandise.html">Merchandise</a></li>
+            <li><a href="../Images/Page 1.html">Products</a></li>
             <li><a href="#customers">Customers</a></li>
             <li><a href="../Login Page/Login.html">Login</a></li>
-            <li><a href="../Sign Up/Sign.html">Sign Up</a></li>
         </ul>
-        <!--icons-->
-        <div class="header-icon">
-            <div class="search">
-                <input type="text" name="search" id="" placeholder="Search here..">
-                <i class='bx bx-search' id="search icon"></i>  
-            </div>
-            <a href="../Cart/Cart.html"><i class='bx bx-cart-alt'></i></a>
-        </div>
-        <!--search box-->
     </header>
-    <h1>Shopping Cart</h1>
-    <table class="cart-table">
-        <thead>
-            <tr>
-                <th>Product</th>
-                <th>Price (Rs.)</th>
-                <th>Quantity</th>
-                <th>Total (Rs.)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="cart-items"></tbody>
-    </table>
-    <p>Total: Rs. <span id="cart-total">0</span></p>
-    <button onclick="clearCart()">Clear Cart</button>
+    
+    <h1>Checkout</h1>
+    
+    <div class="checkout-container">
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price (Rs.)</th>
+                        <th>Quantity</th>
+                        <th>Total (Rs.)</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-summary-items"></tbody>
+            </table>
+            <p>Total: Rs. <span id="cart-summary-total">0</span></p>
+            <button id="clear-cart-btn">Clear Cart</button>
+        </div>        
+        
+        <div class="payment-form">
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required><br>
+                
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" placeholder="Enter your card number" required><br>
+                
+                <label for="expiry-date">Expiry Date (MM/YY)</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY" required><br>
+                
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="CVV" required><br>
+                
+                <button type="submit" id="pay-btn">Pay Now</button>
+            </form>
+        </div>
+    </div>
 
     <script>
-        // Function to load cart items from localStorage and display them
-        function loadCart() {
+        // Load cart data to display on the checkout page
+        function loadCartSummary() {
             const cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartItemsContainer = document.getElementById("cart-items");
-            const cartTotal = document.getElementById("cart-total");
+            const cartItemsContainer = document.getElementById("cart-summary-items");
+            const cartTotal = document.getElementById("cart-summary-total");
             let total = 0;
 
             cartItemsContainer.innerHTML = ""; // Clear existing items
 
-            cart.forEach(item => {
+            cart.forEach((item, index) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
                     <td>${item.title}</td>
                     <td>${item.price}</td>
-                    <td>${item.quantity}</td>
-                    <td>${item.price * item.quantity}</td>
-                    <td><button onclick="removeFromCart('${item.id}')">Remove</button></td>
+                    <td>
+                        <div class="quantity-controls">
+                            <button class="decrement-btn" data-index="${index}">-</button>
+                            <span class="quantity-display">${item.quantity}</span>
+                            <button class="increment-btn" data-index="${index}">+</button>
+                        </div>
+                    </td>
+                    <td class="item-total">${item.price * item.quantity}</td>
                 `;
                 cartItemsContainer.appendChild(row);
 
@@ -88,24 +91,130 @@
             });
 
             cartTotal.textContent = total;
+
+            // Add event listeners to increment and decrement buttons
+            document.querySelectorAll(".increment-btn").forEach(button => {
+                button.addEventListener("click", incrementQuantity);
+            });
+            document.querySelectorAll(".decrement-btn").forEach(button => {
+                button.addEventListener("click", decrementQuantity);
+            });
         }
 
-        // Function to remove an item from the cart
-        function removeFromCart(productId) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart = cart.filter(item => item.id !== productId);
+        // Increment quantity
+        function incrementQuantity(event) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const index = event.target.dataset.index;
+            cart[index].quantity += 1;
             localStorage.setItem("cart", JSON.stringify(cart));
-            loadCart(); // Reload cart
+            loadCartSummary(); // Reload cart summary to reflect updates
         }
 
-        // Function to clear the entire cart
-        function clearCart() {
-            localStorage.removeItem("cart");
-            loadCart(); // Reload cart
+        // Decrement quantity
+        function decrementQuantity(event) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const index = event.target.dataset.index;
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCartSummary(); // Reload cart summary to reflect updates
+            }
         }
 
-        // Initialize cart display
-        loadCart();
+        // Handle form submission (for now it just shows a confirmation)
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // You can implement actual payment gateway integration here.
+            alert("Payment Successful! Thank you for your purchase.");
+            // Redirect the user to a success page or back to the home page after payment
+            window.location.href = "../Home Page/MainPage.html";
+        });
+
+        // Initialize cart summary on page load
+        loadCartSummary();
+        // Load cart data to display on the checkout page
+function loadCartSummary() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartItemsContainer = document.getElementById("cart-summary-items");
+    const cartTotal = document.getElementById("cart-summary-total");
+    let total = 0;
+
+    cartItemsContainer.innerHTML = ""; // Clear existing items
+
+    cart.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.title}</td>
+            <td>${item.price}</td>
+            <td>
+                <div class="quantity-controls">
+                    <button class="decrement-btn" data-index="${index}">-</button>
+                    <span class="quantity-display">${item.quantity}</span>
+                    <button class="increment-btn" data-index="${index}">+</button>
+                </div>
+            </td>
+            <td class="item-total">${item.price * item.quantity}</td>
+        `;
+        cartItemsContainer.appendChild(row);
+
+        total += item.price * item.quantity;
+    });
+
+    cartTotal.textContent = total;
+
+    // Add event listeners to increment and decrement buttons
+    document.querySelectorAll(".increment-btn").forEach(button => {
+        button.addEventListener("click", incrementQuantity);
+    });
+    document.querySelectorAll(".decrement-btn").forEach(button => {
+        button.addEventListener("click", decrementQuantity);
+    });
+}
+
+// Clear cart data
+function clearCart() {
+    localStorage.removeItem("cart"); // Remove cart from localStorage
+    loadCartSummary(); // Reload the cart summary
+    alert("Your cart has been cleared.");
+}
+
+// Increment quantity
+function incrementQuantity(event) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const index = event.target.dataset.index;
+    cart[index].quantity += 1;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartSummary(); // Reload cart summary to reflect updates
+}
+
+// Decrement quantity
+function decrementQuantity(event) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const index = event.target.dataset.index;
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCartSummary(); // Reload cart summary to reflect updates
+    }
+}
+
+// Handle form submission (for now it just shows a confirmation)
+document.getElementById("payment-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // You can implement actual payment gateway integration here.
+    alert("Payment Successful! Thank you for your purchase.");
+    // Redirect the user to a success page or back to the home page after payment
+    window.location.href = "../Home Page/MainPage.html";
+});
+
+// Add event listener to Clear Cart button
+document.getElementById("clear-cart-btn").addEventListener("click", clearCart);
+
+// Initialize cart summary on page load
+loadCartSummary();
+
     </script>
 </body>
 </html>
